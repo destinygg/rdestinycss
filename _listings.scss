@@ -1,0 +1,9 @@
+@import 'colors';
+
+body > .content {
+    background-color: $listings-background-color;
+    position: relative;
+    z-index: 100;
+    margin-top: -5px;
+    margin-left: 16px;
+}
