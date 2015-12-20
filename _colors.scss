@@ -1,6 +1,9 @@
 // Base color scheme for the entire stylesheet
 
 $page-background-color: #303030;
+$page-link-color: #FFA000;
+$page-link-color-hover: #FFD54F;
+$page-link-color-visited: #FF8F00;
 
 $listings-background-color: #424242;
 $sidebar-background-color: #212121;
@@ -9,5 +12,8 @@ $sidebar-background-color: #212121;
 $gold-base-text-color: #d2a332;
 
 // Header colors
+$header-background-color-dark: #37474F;
 $header-background-color: #455a64;
 $header-base-text-color: #fff;
+$menu-link-color: #fafafa;
+$menu-link-color-active: #4FC3F7;

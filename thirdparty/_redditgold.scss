@@ -1,6 +1,12 @@
 @import '../colors';
 
 a.gold,
+#sr-header-area:hover .sr-bar a.gold,
 .flat-list li a.gold {
     color: $gold-base-text-color;
 }
+
+#sr-header-area .sr-bar a.gold {
+    color: $header-background-color;
+}
+

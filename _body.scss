@@ -3,3 +3,17 @@
 body {
     background-color: $page-background-color;
 }
+
+a {
+    color: $page-link-color;
+    transition: color 0.3s;
+}
+
+a:hover,
+a:active {
+    color: $page-link-color-hover;
+}
+
+a:visited {
+    color: $page-link-color-visited;
+}

@@ -4,19 +4,27 @@
 #header {
     background-color: $header-background-color;
     border-bottom: 0px;
-    min-height: 200px;
+    min-height: 203px;
     color: $header-base-text-color;
     box-shadow: 0px 0px 3px #000;
 }
 
 #sr-header-area {
-    background-color: transparent;
+    background-color: $header-background-color-dark;
     border-bottom: 0px;
+    padding: 8px;
 }
 
-.dropdown.srdrop .selected,
-.sr-bar a {
+.sr-bar a,
+.dropdown.srdrop .selected {
+    color: $header-background-color;
+    transition: color 0.3s;
+}
+
+#sr-header-area:hover .dropdown.srdrop .selected,
+#sr-header-area:hover .sr-bar a {
     color: $header-base-text-color;
+    transition: color 0.3s;
 }
 
 .dropdown.srdrop .selected {
@@ -32,8 +40,16 @@
     display: none;
 }
 
-#header-img {
+#header-img.default-header {
     position: absolute;
+    background-image: url($reddit-logo);
+    background-position: 0px 0px;
+    width: 38px;
+    height: 32px;
+    margin: 0px;
+    left: 32px;
+    top: 165px;
+    z-index: 102;
 }
 
 #header-bottom-left .pagename.redditname a {
@@ -43,7 +59,7 @@
     width: 189px;
     color: transparent;
     margin: 16px;
-    margin-top: 42px;
+    margin-top: 52px;
 }
 
 #header-bottom-left .pagename.redditname a:after {
@@ -57,13 +73,85 @@
     font-weight: normal;
 }
 
+#header-bottom-left .pagename.redditname a:before {
+    content: url($destiny-illus);
+    position: absolute;
+    top: 34px;
+}
+
 #header-bottom-left .tabmenu {
     position: absolute;
     z-index: 101;
     bottom: 0;
     left: 16px;
     padding: 16px;
+    padding-left: 63px;
+    min-width: 420px;
+    display: block;
     background-color: $listings-background-color;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    box-shadow: 0px 2px 3px #000;
+}
+
+#header-bottom-left .tabmenu li:first-child {
+    margin-left: 0px;
+}
+
+#header-bottom-left .tabmenu li:last-child {
+    margin-right: 0px;
+}
+
+#header-bottom-left .tabmenu li {
+    margin: 0 8px;
+}
+
+#header-bottom-left .tabmenu li a, {
+    font-weight: normal;
+    text-transform: capitalize;
+    background-color: transparent;
+    padding: 0px;
+    font-size: 14px;
+    display: inline-block;
+    color: $menu-link-color;
+}
+
+#header-bottom-left .tabmenu li.selected a,
+#header-bottom-left .tabmenu li a:hover {
+    border: 0px;
+    color: $menu-link-color-active;
+    text-shadow: 0px 0px 10px $menu-link-color-active;
+}
+
+#header-bottom-left .tabmenu li a,
+#header-bottom-left .tabmenu li a:hover {
+    transition: color 0.3s;
+}
+
+#header-bottom-right {
+    position: absolute;
+    bottom: 70px;
+    right: 16px;
+    font-size: 12px;
+    background: none;
+}
+
+#header-bottom-right .user,
+#header-bottom-right .user a {
+    color: $header-base-text-color;
+}
+
+#header-bottom-right .user a {
+    display: block;
+    font-size: 21px;
+    margin-bottom: 16px;
+    text-align: right;
+}
+
+#header-bottom-right .separator {
+    color: transparent;
+}
+
+#header-bottom-right .pref-lang {
+    font-weight: normal;
 }

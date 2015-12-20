@@ -4,6 +4,9 @@ body > .content {
     background-color: $listings-background-color;
     position: relative;
     z-index: 100;
-    margin-top: -5px;
+    margin-top: 0px;
     margin-left: 16px;
+    margin-right: 16px;
+    padding: 16px;
+    padding-top: 1px;
 }
