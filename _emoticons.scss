@@ -1,0 +1,37 @@
+@import "compass/utilities/sprites";
+$emoticons: sprite-map("emoticons/*.png");
+
+.emoticon {
+    content: " "; 
+    background-image: url(%%emoticons%%); 
+    background-repeat:no-repeat; 
+    display: inline-block !important;
+}
+
+@keyframes intensify {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    100% {
+        transform: translate(3px, 0px);
+    }
+}
+
+a[href="#triggered"] {
+    animation: intensify .1s steps(5) infinite;
+    pointer-events: none;
+    cursor: default;
+}
+
+@each $i in sprite_names($emoticons) {
+    a[href="/#{$i}"]:after {
+        @extend .emoticon;
+        background-position: sprite-position($emoticons, $i);
+        @include sprite-dimensions($emoticons, $i);
+    }
+
+    a[href="#triggered"] + a[href="/#{$i}"]:after {
+        animation: intensify .1s steps(5) infinite;
+        transform: translate3d(0, 0, 0);
+    }
+}

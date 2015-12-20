@@ -3,8 +3,11 @@ all: compile
 update-emoticons:
 	cp ../website/scripts/emotes/emoticons/* emoticons/
 
+compile-dev:
+	compass compile -s expanded
+
 compile:
-	compass compile --sass-dir ./ -s compressed
+	compass compile -s compressed
 
 clip: compile
 	cat stylesheets/rdestiny.css | xclip -selection c
