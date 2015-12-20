@@ -52,80 +52,84 @@
     z-index: 102;
 }
 
-#header-bottom-left .pagename.redditname a {
-    background-image: url($logo);
-    display: inline-block;
-    height: 24px;
-    width: 189px;
-    color: transparent;
-    margin: 16px;
-    margin-top: 52px;
-}
+#header-bottom-left {
+    .pagename.redditname {
+        a {
+            background-image: url($logo);
+            display: inline-block;
+            height: 24px;
+            width: 189px;
+            color: transparent;
+            margin: 16px;
+            margin-top: 52px;
+        }
 
-#header-bottom-left .pagename.redditname a:after {
-    content: "Professional Streamer";
-    color: $header-base-text-color;
-    display: block;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    font-variant: normal;
-    font-size: 12px;
-    font-weight: normal;
-}
+        a:after {
+            content: "Professional Streamer";
+            color: $header-base-text-color;
+            display: block;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            font-variant: normal;
+            font-size: 12px;
+            font-weight: normal;
+        }
 
-#header-bottom-left .pagename.redditname a:before {
-    content: url($destiny-illus);
-    position: absolute;
-    top: 34px;
-}
+        a:before {
+            content: url($destiny-illus);
+            position: absolute;
+            top: 34px;
+        }
+    }
 
-#header-bottom-left .tabmenu {
-    position: absolute;
-    z-index: 101;
-    bottom: 0;
-    left: 16px;
-    padding: 16px;
-    padding-left: 63px;
-    min-width: 420px;
-    display: block;
-    background-color: $listings-background-color;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    box-shadow: 0px 2px 3px #000;
-}
+    .tabmenu {
+        position: absolute;
+        z-index: 101;
+        bottom: 0;
+        left: 16px;
+        padding: 16px;
+        padding-left: 63px;
+        min-width: 420px;
+        display: block;
+        background-color: $listings-background-color;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        box-shadow: 0px 2px 3px #000;
 
-#header-bottom-left .tabmenu li:first-child {
-    margin-left: 0px;
-}
+        li:first-child {
+            margin-left: 0px;
+        }
 
-#header-bottom-left .tabmenu li:last-child {
-    margin-right: 0px;
-}
+        li:last-child {
+            margin-right: 0px;
+        }
 
-#header-bottom-left .tabmenu li {
-    margin: 0 8px;
-}
+        li {
+            margin: 0 8px;
 
-#header-bottom-left .tabmenu li a, {
-    font-weight: normal;
-    text-transform: capitalize;
-    background-color: transparent;
-    padding: 0px;
-    font-size: 14px;
-    display: inline-block;
-    color: $menu-link-color;
-}
+            a {
+                font-weight: normal;
+                text-transform: capitalize;
+                background-color: transparent;
+                padding: 0px;
+                font-size: 14px;
+                display: inline-block;
+                color: $menu-link-color;
+            };
+        }
 
-#header-bottom-left .tabmenu li.selected a,
-#header-bottom-left .tabmenu li a:hover {
-    border: 0px;
-    color: $menu-link-color-active;
-    text-shadow: 0px 0px 10px $menu-link-color-active;
-}
+        li.selected a,
+        li a:hover {
+            border: 0px;
+            color: $menu-link-color-active;
+            text-shadow: 0px 0px 10px $menu-link-color-active;
+        }
 
-#header-bottom-left .tabmenu li a,
-#header-bottom-left .tabmenu li a:hover {
-    transition: color 0.3s;
+        li a,
+        li a:hover {
+            transition: color 0.3s;
+        }
+    }
 }
 
 #header-bottom-right {
@@ -134,24 +138,24 @@
     right: 16px;
     font-size: 12px;
     background: none;
-}
 
-#header-bottom-right .user,
-#header-bottom-right .user a {
-    color: $header-base-text-color;
-}
+    .user,
+    .user a {
+        color: $header-base-text-color;
+    }
 
-#header-bottom-right .user a {
-    display: block;
-    font-size: 21px;
-    margin-bottom: 16px;
-    text-align: right;
-}
+    .user a {
+        display: block;
+        font-size: 21px;
+        margin-bottom: 16px;
+        text-align: right;
+    }
 
-#header-bottom-right .separator {
-    color: transparent;
-}
+    .separator {
+        color: transparent;
+    }
 
-#header-bottom-right .pref-lang {
-    font-weight: normal;
+    .pref-lang {
+        font-weight: normal;
+    }
 }

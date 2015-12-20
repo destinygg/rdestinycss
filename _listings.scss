@@ -6,7 +6,54 @@ body > .content {
     z-index: 100;
     margin-top: 0px;
     margin-left: 16px;
-    margin-right: 16px;
+    margin-right: 316px;
     padding: 16px;
     padding-top: 1px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.link {
+    .rank {
+        display: none;
+    }
+
+    .midcol {
+        margin-left: 0px;
+        margin-right: 16px;
+    }
+
+    .arrow {
+        background-image: url($sprites);
+        width: 15px;
+        height: 14px;
+    }
+
+    .arrow.up {
+        @extend .arrow;
+        background-position: 0px 0px;
+    }
+
+    .arrow.upmod {
+        @extend .arrow;
+        background-position: -15px 0px;
+    }
+
+    .arrow.down {
+        @extend .arrow;
+        background-position: 0px -14px;
+    }
+
+    .arrow.downmod {
+        @extend .arrow;
+        background-position: -15px -14px;
+    }
+
+    .score.likes {
+        color: $upvote-color;
+    }
+
+    .score.dislikes {
+        color: $downvote-color;
+    }
 }
