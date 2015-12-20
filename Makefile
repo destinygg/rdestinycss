@@ -3,7 +3,7 @@ all: compile
 compile:
 	compass compile --sass-dir ./ -s compressed
 
-clip: all
+clip: compile
 	cat stylesheets/rdestiny.css | xclip -selection c
 
 clean:
