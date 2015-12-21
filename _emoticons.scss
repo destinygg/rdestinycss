@@ -6,6 +6,7 @@ $emoticons: sprite-map("emoticons/*.png");
     background-image: url(%%emoticons%%); 
     background-repeat:no-repeat; 
     display: inline-block !important;
+    cursor: default;
 }
 
 @keyframes intensify {

@@ -2,18 +2,28 @@
 
 body {
     background-color: $page-background-color;
+    color: #fff;
 }
 
 a {
     color: $page-link-color;
     transition: color 0.3s;
+
+    &:hover,
+    &:active {
+        color: $page-link-color-hover;
+    }
+
+    &:visited {
+        color: $page-link-color-visited;
+    }
 }
 
-a:hover,
-a:active {
-    color: $page-link-color-hover;
+.footer {
+    border: 1px solid #000;
+    border-radius: 3px;
 }
 
-a:visited {
-    color: $page-link-color-visited;
+.footer .col {
+    border-color: #000;
 }

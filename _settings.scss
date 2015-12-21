@@ -1,0 +1,15 @@
+@import 'colors';
+
+.linefield {
+    background-color: transparent;
+}
+
+.linefield .title {
+    color: #fff;
+    text-transform: capitalize;
+}
+
+body label,
+body table {
+    color: #fff;
+}

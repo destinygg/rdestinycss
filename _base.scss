@@ -1,0 +1,18 @@
+@import 'colors';
+
+.button-primary {
+    background-color: $button-primary-background-color;
+    background-image: none;
+    letter-spacing: normal;
+    color: $button-primary-text-color;
+    border: 1px solid $button-primary-border-color;
+    border-radius: 3px;
+    padding: 4px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+
+    &:hover {
+        background-color: $button-primary-background-color-hover;
+        color: $button-primary-text-color-hover;
+        border: 1px solid $button-primary-border-color-hover;
+    }
+}

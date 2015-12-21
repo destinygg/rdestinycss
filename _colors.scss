@@ -1,12 +1,16 @@
 // Base color scheme for the entire stylesheet
-
 $page-background-color: #303030;
 $page-link-color: #FFA000;
 $page-link-color-hover: #FFD54F;
 $page-link-color-visited: #FF8F00;
 
-$listings-background-color: #424242;
-$sidebar-background-color: #212121;
+$button-primary-background-color: #78909C;
+$button-primary-text-color: #fff;
+$button-primary-border-color: #B0BEC5;
+
+$button-primary-background-color-hover: #fff;
+$button-primary-text-color-hover: #000;
+$button-primary-border-color-hover: #fff;
 
 // Reddit gold colors
 $gold-base-text-color: #d2a332;
@@ -19,8 +23,34 @@ $menu-link-color: #fafafa;
 $menu-link-color-active: #4FC3F7;
 
 // Listing colors
+$listings-background-color: #424242;
 $upvote-color: #ff9c00;
 $downvote-color: #00c0ff;
 $link-title-color: #4FC3F7;
 $link-title-color-hover: #8ad5f6;
 $link-title-color-visited: #9183e9;
+
+$link-title-color-sticky: #4CAF50;
+$link-title-color-hover-sticky: #A5D6A7;
+$link-background-color-sticky: #525252;
+
+$link-author-color: #fff;
+$link-author-mod-background-color: #2E7D32;
+$link-author-mod-border-color: #00ff00;
+$listings-base-text-color: #AAAAAA;
+
+$listings-post-text-color: #fff;
+$listings-post-background-color: rgba(255, 255, 255, 0.1);
+$listings-post-background-color-alt: rgba(0, 0, 0, 0.2);
+$greentext: #a9d33c;
+
+// Sidebar colors
+$sidebar-background-color: #424242;
+$sidebar-text-color: #FAFAFA;
+$sidebar-search-background-color: #525252;
+
+$sidebar-button-unsubscribe-background-color: #8c3b3b;
+$sidebar-button-unsubscribe-border-color: #ff0000;
+
+$sidebar-button-subscribe-background-color: #2E7D32;
+$sidebar-button-subscribe-border-color: #00ff00;

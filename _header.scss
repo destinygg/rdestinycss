@@ -62,6 +62,7 @@
             color: transparent;
             margin: 16px;
             margin-top: 52px;
+            margin-left: 32px;
         }
 
         a:after {
@@ -89,7 +90,7 @@
         left: 16px;
         padding: 16px;
         padding-left: 63px;
-        min-width: 420px;
+        min-width: 440px;
         display: block;
         background-color: $listings-background-color;
         border-top-left-radius: 3px;
@@ -134,7 +135,7 @@
 
 #header-bottom-right {
     position: absolute;
-    bottom: 70px;
+    bottom: 16px;
     right: 16px;
     font-size: 12px;
     background: none;

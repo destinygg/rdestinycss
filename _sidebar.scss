@@ -1,0 +1,179 @@
+@import 'colors';
+@import 'images';
+@import 'base';
+
+.side {
+    padding: 16px;
+    background-color: $sidebar-background-color;
+    color: $sidebar-text-color;
+    margin: 0px 16px 0px 0px;
+
+    .spacer {
+        margin: 0px 0px 16px 0px;
+    }
+
+    #search input[type=text] {
+        border: none;
+        border-radius: 3px;
+        font-size: 14px;
+        background-color: $sidebar-search-background-color;
+    }
+
+    .morelink {
+        @extend .button-primary;
+
+        a {
+            color: $button-primary-text-color;
+            font-weight: normal;
+            font-size: 14px;
+
+            &:hover {
+                color: $button-primary-text-color-hover;
+            }
+        }
+
+        .nub {
+            display: none;
+        }
+    }
+
+    .redditname {
+        display: none;
+    }
+
+    .fancy-toggle-button {
+        display: block;
+        margin: 0px;
+
+        .remove,
+        .add {
+            @extend .button-primary;
+            margin: 0px;
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
+            height: 29px;
+            line-height: 29px;
+            text-transform: capitalize;
+            margin-bottom: 16px;
+
+            &.active {
+                display: block;
+            }
+        }
+        
+        .remove {
+            background-color: $sidebar-button-unsubscribe-background-color;
+            border-color: $sidebar-button-unsubscribe-border-color;            
+        }
+
+        .add {
+            background-color: $sidebar-button-subscribe-background-color;
+            border-color: $sidebar-button-subscribe-border-color;            
+        }
+    }
+
+    .subscribers {
+        .word {
+            display: none;
+        }
+
+        .number:after {
+            content: " rustlers subscribed, ";
+        }
+    }
+
+    .users-online {
+        margin-bottom: 16px;
+        display: inline-block;
+
+        &:before {
+            display: none;
+        }
+
+        &:after {
+            content: "rustlers here now";
+        }
+
+        .word {
+            display: none;
+        }
+    }
+
+    .sidebox.create,
+    &:nth-last-child(2) {
+        display: none;
+    }
+
+    .titlebox form.toggle,
+    .leavemoderator {
+        background-color: transparent;
+    }
+
+    .md {
+        color: $sidebar-text-color;
+        font-size: 14px;
+        margin-top: 16px;
+
+        hr {
+            background: $page-background-color;
+            margin: 8px 0px 8px 0px;
+        }
+
+        a {
+            color: $page-link-color;
+            transition: color 0.3s;
+
+            &:hover,
+            &:active {
+                color: $page-link-color-hover;
+            }
+
+            &:visited {
+                color: $page-link-color-visited;
+            }
+        }
+    }
+
+    .tagline a {
+        color: $page-link-color;
+    }
+
+    .titlebox .bottom {
+        border-top: 2px solid $page-background-color;
+        font-size: 100%;
+        padding-top: 16px;
+        margin-top: 16px;
+    }
+
+    .icon-menu a {
+        background: transparent;
+    }
+
+    .sidecontentbox .content {
+        border: none;
+        padding: 0px;
+    }
+
+    .sidecontentbox .title h1 {
+        text-transform: lowercase;
+    }
+
+    .linkinfo {
+        background-color: $sidebar-search-background-color;
+        border: none;
+        border-radius: 3px;
+        padding: 16px;
+    }
+
+    .shortlink {
+        color: $sidebar-search-background-color;
+    }
+
+    #shortlink-text {
+        float: left;
+        background-color: $sidebar-search-background-color;
+        border: none;
+        color: #fff;
+    }
+}
