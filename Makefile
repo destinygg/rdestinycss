@@ -1,4 +1,10 @@
+PIP=scripts/venv/bin/pip
+
 all: compile
+
+env:
+	python3 -m venv scripts/venv
+	$(PIP) install praw
 
 update-emoticons:
 	cp ../website/scripts/emotes/emoticons/* emoticons/

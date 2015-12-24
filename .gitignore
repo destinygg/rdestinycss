@@ -5,3 +5,4 @@ emoticons/
 *.ini
 *.jpg
 *.jpeg
+venv/

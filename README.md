@@ -17,6 +17,10 @@ You will also need a copy of the latest [website](https://github.com/destinygg/w
   |-rdestinycss/
 ```
 
+# Scripts
+
+There is currently one script that is used to update the stream status for the subreddit. There is an associated virtualenv, use accordingly.
+
 # Building
 
 There are several make commands available, however you're probably only interested in `make compile`, `make clip` and `make release`.
