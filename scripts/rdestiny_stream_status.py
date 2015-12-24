@@ -15,17 +15,11 @@ class DestinySidebarUpdater:
 
     streamInformationTemplate = Template("""-----
 
-[](http://www.destiny.gg/?from=reddit)
+[](http://www.destiny.gg/bigscreen?from=reddit#thumb)
+[LIVE!](http://www.destiny.gg/bigscreen?from=reddit#live)
+[with **$streamViewers** viewers.](http://www.destiny.gg/bigscreen#streamViewers)
+[Playing: **$streamGame**]($streamGameHomepage#gamePlaying)
 
-
-[LIVE](http://www.destiny.gg/?from=reddit#live)!
- with **$streamViewers** viewers.
-
-Playing:
-
-[**$streamGame**]($streamGameHomepage#gamePlaying)
-
------
 """)
 
     template = Template("""$streamInformation $sentinel $currentSidebar""")
@@ -80,7 +74,9 @@ Playing:
             streamGame = responseJSON["stream"]["game"]
 
         # Download the preview image to upload to the subreddit
-        urllib.request.urlretrieve(responseJSON["stream"]["preview"]["small"],
+        # responseJSON["stream"]["preview"]["small"]
+        thumb_url = "http://static-cdn.jtvnw.net/previews-ttv/live_user_destiny-170x96.jpg"
+        urllib.request.urlretrieve(thumb_url,
                                    self.STREAM_THUMB_FILENAME)
         self.subreddit.upload_image(self.STREAM_THUMB_FILENAME, "streamThumb")
 

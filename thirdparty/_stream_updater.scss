@@ -1,0 +1,59 @@
+@keyframes stream-thumb-pulse {
+    0% {
+        box-shadow: 0px 0px 30px #FF0000;
+    }
+
+    50% {
+        box-shadow: 0px 0px 40px #FFAAAA;
+    }
+
+    100% {
+        box-shadow: 0px 0px 30px #FF0000;
+    }
+}
+
+$thumb-left: 600px;
+$thumb-top: 48px;
+
+$text-top: $thumb-top + 22px;
+$text-left: $thumb-left + 186px;
+$line: 18px;
+
+.side a[href="http://www.destiny.gg/bigscreen?from=reddit#thumb"] {
+    position: absolute;
+    top: $thumb-top;
+    left: $thumb-left;
+    display: block;
+    width: 170px;
+    height: 96px;
+    background-image: url(%%streamThumb%%);
+    box-shadow: 0px 0px 30px #ff0000;
+    animation: stream-thumb-pulse 3s infinite;
+}
+
+.side a[href="http://www.destiny.gg/bigscreen?from=reddit#live"] {
+    position: absolute;
+    top: $text-top;
+    left: $text-left;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FF0000;
+}
+
+.side a[href="#streamViewers"] {
+    position: absolute;
+    top: $text-top + $line;
+    left: $text-left;
+    color: #fff;
+}
+
+.side a[href$="#gamePlaying"] {
+    position: absolute;
+    top: $text-top + ($line * 2);
+    left: $text-left;
+    color: #fff;   
+}
+
+.side a[href="/s"] {
+    display: none;
+}
