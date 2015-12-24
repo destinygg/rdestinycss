@@ -7,6 +7,7 @@
     min-height: 203px;
     color: $header-base-text-color;
     box-shadow: 0px 0px 3px #000;
+    z-index: auto;
 }
 
 #sr-header-area {
@@ -55,7 +56,7 @@
 #header-bottom-left {
     .pagename.redditname {
         color: $header-background-color;
-        
+
         a {
             background-image: url($logo);
             display: inline-block;
@@ -87,7 +88,7 @@
 
     .tabmenu {
         position: absolute;
-        z-index: 101;
+        z-index: 100;
         bottom: 0;
         left: 16px;
         padding: 16px;
@@ -161,4 +162,8 @@
     .pref-lang {
         font-weight: normal;
     }
+}
+
+#sr-header-area .drop-choices.srdrop {
+    z-index: 200;
 }
