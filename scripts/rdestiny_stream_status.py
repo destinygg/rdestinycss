@@ -117,8 +117,8 @@ class DestinySidebarUpdater:
         print("Grabbing homepage")
         if (game != self.previousGame):
             # Anonymous api usage should be enough for this bot
-            url = "http://ajax.googleapis.com/ajax/services/search/web?v=1.0"
-            "&num=1&q=%s+homepage" % (game.replace(" ", "+"))
+            url = "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&num=1&q=%s+homepage" % (
+                game.replace(" ", "+"))
 
             response = urllib.request.urlopen(url)
             encoding = response.headers.get_content_charset()
