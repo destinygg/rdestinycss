@@ -29,7 +29,7 @@ body > .content {
 }
 
 .base-expando {
-    background-image: url(%%expando%%);
+    background-image: url($expando);
     background-color: transparent;
     width: 24px;
     height: 24px;
@@ -90,12 +90,12 @@ body > .content {
 
         &.self {
             @extend .base-thumbnail;
-            background-image: url(%%selfpost%%);
+            background-image: url($selfpost);
         }
 
         &.nsfw {
             @extend .base-thumbnail;
-            background-image: url(%%nsfw%%);
+            background-image: url($nsfw);
         }
     }
 
