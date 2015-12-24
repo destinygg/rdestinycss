@@ -54,6 +54,8 @@
 
 #header-bottom-left {
     .pagename.redditname {
+        color: $header-background-color;
+        
         a {
             background-image: url($logo);
             display: inline-block;

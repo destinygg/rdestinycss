@@ -1,0 +1,95 @@
+@import 'colors';
+
+.roundfield {
+    background-color: transparent;
+    border-radius: 3px;
+    padding: 0px;
+    font-size: 14px;
+
+    .title {
+        text-transform: capitalize;
+    }
+
+    textarea,
+    input {
+        border-radius: 3px;
+    }
+}
+
+.submit-page .content > h1 {
+    background-color: $listings-background-color;
+    border-radius: 3px;
+    margin: -50px -16px 16px -16px;
+    padding: 16px;
+    text-transform: capitalize;
+}
+
+.content.submit .info-notice {
+    @extend .infobar;
+    margin-top: 16px;
+    padding: 16px;
+    background-color: $notice-background-color;
+    border: 1px solid $notice-border-color;
+}
+
+@keyframes idiot-notice {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.05, 1.05);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.formtabs-content {
+    background-color: $form-background-color;
+    padding: 16px;
+    border: none;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+    .infobar {
+        background-color: $notice-background-color;
+        border: 1px solid $notice-border-color;
+        padding: 8px;
+
+        &:after {
+            content: "If you are here for Bungie's game, then you are in the wrong subreddit! Please visit r/destinythegame instead!";
+            display: block;
+            margin-top: 16px;
+            color: $idiot-notice-text-color;
+            font-weight: bold;
+            animation: idiot-notice 1s infinite;
+        }
+    }
+}
+
+ul.tabmenu.formtab {
+    padding-left: 0px;
+    font-size: 16px;
+
+    li {
+        display: inline-block;
+    }
+
+    .selected a {
+        background-color: $form-background-color;
+        font-size: 14px;
+    }
+
+    a {
+        display: block;
+        border: none;
+        font-size: 14px;
+        background-color: transparent;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        padding: 12px;
+        text-transform: capitalize;
+    }
+}

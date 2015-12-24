@@ -12,6 +12,27 @@ body > .content {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
+
+    .menuarea {
+        border: none;
+        padding: 16px 0px 16px 0px;
+        margin: 0px;
+        font-size: 14px;
+    }
+}
+
+.base-thumbnail {
+    margin: 0px 24px 0px 8px;
+    background-position: 0px 0px;
+    width: 54px;
+    height: 54px;
+}
+
+.base-expando {
+    background-image: url(%%expando%%);
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
 }
 
 .thing.link,
@@ -64,7 +85,74 @@ body > .content {
         color: $downvote-color;
     }
 
+    .thumbnail {
+        margin: 0px 16px 0px 0px;
+
+        &.self {
+            @extend .base-thumbnail;
+            background-image: url(%%selfpost%%);
+        }
+
+        &.nsfw {
+            @extend .base-thumbnail;
+            background-image: url(%%nsfw%%);
+        }
+    }
+
+    .expando-button {
+        &.selftext.collapsed,
+        &.selftext.collapsed:hover {
+            @extend .base-expando;
+            background-position: 0px 0px;
+        }
+
+        &.selftext.expanded,
+        &.selftext.expanded:hover {
+            @extend .base-expando;
+            background-position: 0px -24px;
+        } 
+
+        &.video.collapsed,
+        &.video.collapsed:hover {
+            @extend .base-expando;
+            background-position: -24px 0px;
+        }
+
+        &.video.expanded,
+        &.video.expanded:hover {
+            @extend .base-expando;
+            background-position: -24px -24px;
+        } 
+    }
+
+    &.over18 a.title {
+        color: $nsfw-link-title-color;
+        transition: text-shadow 0.3s, color 0.3s;
+
+        &:hover,
+        &:active {
+            color: $nsfw-link-title-color-hover;
+            text-shadow: 0px 0px 10px $nsfw-link-title-color;
+        }
+
+        &:before {
+            content: "NSFW";
+            background-color: $nsfw-link-title-color;
+            color: $listings-background-color;
+            border-radius: 3px;
+            padding: 0px 4px;
+            margin-right: 8px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+
+    .nsfw-stamp {
+        display: none;
+    }
+
     a.title {
+        display: inline-block;
         color: $link-title-color;
         transition: text-shadow 0.3s, color 0.3s;
 
@@ -255,4 +343,14 @@ $rule: '.commentarea';
             background-color: $listings-post-background-color-alt;
         }
     }
+}
+
+.drop-choices {
+    padding: 8px;
+    border-radius: 3px;
+    background-color: $listings-background-color;
+}
+
+.dropdown.lightdrop .selected {
+    color: $page-link-color;
 }

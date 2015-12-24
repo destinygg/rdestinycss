@@ -30,6 +30,9 @@ $link-title-color: #4FC3F7;
 $link-title-color-hover: #8ad5f6;
 $link-title-color-visited: #9183e9;
 
+$nsfw-link-title-color: #d83737;
+$nsfw-link-title-color-hover: #ffafaf;
+
 $link-title-color-sticky: #4CAF50;
 $link-title-color-hover-sticky: #A5D6A7;
 $link-background-color-sticky: #525252;
@@ -54,3 +57,9 @@ $sidebar-button-unsubscribe-border-color: #ff0000;
 
 $sidebar-button-subscribe-background-color: #2E7D32;
 $sidebar-button-subscribe-border-color: #00ff00;
+
+// Submission colors
+$form-background-color: #525252;
+$notice-background-color: rgba(255, 255, 255, 0.1);
+$notice-border-color: rgba(255, 255, 255, 0.5);
+$idiot-notice-text-color: #FF0000;

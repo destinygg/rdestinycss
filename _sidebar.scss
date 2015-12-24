@@ -13,11 +13,9 @@
     }
 
     #search input[type=text] {
-        border: none;
-        border-radius: 3px;
-        font-size: 14px;
-        background-color: $sidebar-search-background-color;
+        @extend .infobar;
     }
+    
 
     .morelink {
         @extend .button-primary;
@@ -132,6 +130,12 @@
             &:visited {
                 color: $page-link-color-visited;
             }
+        }
+
+        h1 {
+            font-size: 21px;
+            font-style: medium;
+            font-weight: normal;
         }
     }
 

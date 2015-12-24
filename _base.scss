@@ -16,3 +16,17 @@
         border: 1px solid $button-primary-border-color-hover;
     }
 }
+
+.infobar {
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: $sidebar-search-background-color;
+}
+
+button {
+    @extend .button-primary;
+    text-transform: capitalize;
+    padding: 8px;
+    font-weight: bold;
+}
