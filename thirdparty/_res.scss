@@ -1,9 +1,101 @@
 @import 'colors';
+@import 'base';
 
 body {
     .RES-keyNav-activeElement, 
     .commentarea .RES-keyNav-activeElement .md, 
     .commentarea .RES-keyNav-activeElement.entry .noncollapsed {
         background: transparent !important;
+    }
+
+    #userbarToggle {
+        display: none;
+    }
+
+    #header-bottom-right {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        top: auto;
+        padding: 0px;
+
+        .user .userkarma a {
+            font-size: 12px;
+            display: inline-block;
+        }
+    }
+
+
+    #RESMainGearOverlay.RESGearOverlay {
+        top: 152px !important;
+    }
+}
+
+.sr-bar a:visited {
+    color: $header-background-color;
+}
+
+.expando-button {
+    &.image.collapsed,
+    &.image.collapsed:hover {
+        @extend .base-expando;
+        background-position: 0px 0px;
+    }
+
+    &.image.expanded,
+    &.image.expanded:hover {
+        @extend .base-expando;
+        background-position: 0px -24px;
+    } 
+}
+
+.res-commentBoxes body .comment {
+    border: none !important;
+    border-radius: 3px !important;
+    padding: 16px !important;
+    margin: 0px !important;
+    margin-left: 0px !important;
+}
+
+.res-commentBoxes body > .content {
+    padding-right: 16px !important;
+}
+
+body .comment .tagline {
+    display: block;
+}
+
+html > body .thing .tagline {
+    .author.submitter {
+        background-color: $link-title-color !important;
+    }
+
+    .author.submitter.moderator {
+        background-color: $link-author-mod-background-color !important;
+    }
+}
+
+.RESDashboardToggle,
+#REScommentSubToggle {
+    display: none !important;
+}
+
+.res-commentBoxes body .comment {
+    margin-bottom: 16px !important;
+}
+
+span.score {
+    color: $listings-base-text-color !important;
+}
+
+$rule: '.res-commentBoxes .commentarea';
+@for $i from 1 through 10 {
+    $rule: $rule + ' .comment';
+    #{$rule} {
+        @if $i % 2 == 0 {
+            background-color: $listings-post-background-color !important;
+        } @else {
+            background-color: $listings-post-background-color-alt !important;
+        }
     }
 }

@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'base';
 
 body > .content {
     background-color: $listings-background-color;
@@ -19,20 +20,10 @@ body > .content {
         margin: 0px;
         font-size: 14px;
     }
-}
 
-.base-thumbnail {
-    margin: 0px 24px 0px 8px;
-    background-position: 0px 0px;
-    width: 54px;
-    height: 54px;
-}
-
-.base-expando {
-    background-image: url($expando);
-    background-color: transparent;
-    width: 24px;
-    height: 24px;
+    .panestack-title {
+        margin: 0px;
+    }
 }
 
 .thing.link,
@@ -307,10 +298,12 @@ body > .content {
     .tagline {
         margin-bottom: 16px;
 
-        a.author,
+        a.author {
+            padding: 4px;
+        }
+
         a.submitter {
             background-color: $link-title-color;
-            padding: 4px;
             border-radius: 3px;
         }
 

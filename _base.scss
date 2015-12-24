@@ -30,3 +30,17 @@ button {
     padding: 8px;
     font-weight: bold;
 }
+
+.base-thumbnail {
+    margin: 0px 24px 0px 8px;
+    background-position: 0px 0px;
+    width: 54px;
+    height: 54px;
+}
+
+.base-expando {
+    background-image: url($expando);
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+}
