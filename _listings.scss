@@ -280,7 +280,8 @@ body > .content {
 .thing.new-comment {
     border: none;
     border-radius: 3px;
-    padding: 16px;
+    padding: 16px 16px 1px 16px;
+    margin-bottom: 12px;
     color: $listings-post-text-color;
     margin-left: 0px;
 
