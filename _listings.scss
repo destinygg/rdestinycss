@@ -153,7 +153,7 @@ body > .content {
             text-shadow: 0px 0px 10px $link-title-color;
         }
 
-        &::visited {
+        &:visited {
             color: $link-title-color-visited;
         }
     }
