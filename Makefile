@@ -18,8 +18,9 @@ compile:
 clip: compile
 	cat stylesheets/rdestiny.css | xclip -selection c
 
-release: update-emoticons clip
+release: clean update-emoticons clip
 
 clean:
 	rm -f style.css
 	rm -rf stylesheets/
+	rm -f emoticons-*.png
