@@ -13,7 +13,7 @@ compile-dev:
 	compass compile -s expanded
 
 compile:
-	compass compile -s compressed
+	compass compile -e production --force
 
 clip: compile
 	cat stylesheets/rdestiny.css | xclip -selection c
