@@ -1,0 +1,45 @@
+@import 'colors';
+
+.message {
+    .subject .correspondent {
+        background-color: transparent;
+        border: none;
+    }
+
+    &.recipient > .entry {
+        color: $listings-post-text-color;
+    }
+
+    &.message-reply.recipient > .entry .head, 
+    &.message-parent.recipient > .entry .head {
+        color: $listings-post-text-color;
+    }
+
+    .tagline a,
+    .md a {
+        color: $link-title-color;
+
+        &.moderator {
+            background-color: $link-author-mod-background-color;
+            border: 1px solid $link-author-mod-border-color;
+            border-radius: 3px;
+            color: $listings-post-text-color;
+            padding: 4px;
+            display: inline-block;
+        }
+
+        &:hover,
+        &:active {
+            color: $link-title-color-hover;
+        }
+
+        &:visited {
+            color: $link-title-color-visited;
+        }
+    }
+
+    &.new > .entry {
+        background-color: $link-background-color-sticky;
+        border: none;
+    }
+}
