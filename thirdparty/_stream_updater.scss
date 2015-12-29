@@ -1,14 +1,31 @@
 @keyframes stream-thumb-pulse {
     0% {
-        box-shadow: 0px 0px 30px #FF0000;
+        box-shadow: 0px 0px 10px #FF0000;
     }
 
     50% {
-        box-shadow: 0px 0px 40px #FFAAAA;
+        box-shadow: 0px 0px 10px #FFAAAA;
     }
 
     100% {
-        box-shadow: 0px 0px 30px #FF0000;
+        box-shadow: 0px 0px 10px #FF0000;
+    }
+}
+
+@keyframes live-text-pulse {
+    0% {
+        color: #FF0000;
+        transform: scale(1.0);
+    }
+
+    50% {
+        color: #FFAAAA;
+        transform: scale(1.1);
+    }
+
+    100% {
+        color: #FF0000;
+        transform: scale(1.0);
     }
 }
 
@@ -29,6 +46,8 @@ $line: 18px;
     background-image: url(%%streamThumb%%);
     box-shadow: 0px 0px 30px #ff0000;
     animation: stream-thumb-pulse 3s infinite;
+    border: 1px solid red;
+    border-radius: 3px;
 }
 
 .side a[href="http://www.destiny.gg/bigscreen?from=reddit#live"] {
@@ -37,6 +56,7 @@ $line: 18px;
     left: $text-left;
     font-size: 16px;
     font-weight: bold;
+    animation: live-text-pulse 1.5s infinite;
     color: #FF0000;
 }
 
