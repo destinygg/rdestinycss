@@ -321,6 +321,11 @@ body > .content {
     }
 }
 
+.comment.spam > .child,
+.message.spam > .child {
+    background-color: transparent;
+}
+
 .comment .child {
     margin-top: 16px;
     margin-left: 0px;
