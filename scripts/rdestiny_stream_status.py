@@ -22,7 +22,7 @@ class DestinySidebarUpdater:
 
 """)
 
-    template = Template("""$streamInformation $sentinel $currentSidebar""")
+    template = Template("""$streamInformation$sentinel$currentSidebar""")
 
     def __init__(self):
         # Load the bot's configuration
