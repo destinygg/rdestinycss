@@ -357,3 +357,10 @@ $rule: '.commentarea';
 .dropdown.lightdrop .selected {
     color: $page-link-color;
 }
+
+ul.report-reasons,
+.entry .buttons li.reported-stamp {
+    background-color: $listings-post-background-color;
+    border: none;
+    border-radius: 3px;
+}
