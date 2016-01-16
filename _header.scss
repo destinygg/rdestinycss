@@ -167,3 +167,10 @@
 #sr-header-area .drop-choices.srdrop {
     z-index: 200;
 }
+
+a.message-count,
+a.message-count:hover,
+a.message-count:active,
+a.message-count:visited {
+    background-color: transparent;
+}
