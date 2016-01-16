@@ -4,7 +4,8 @@
 body {
     .RES-keyNav-activeElement, 
     .commentarea .RES-keyNav-activeElement .md, 
-    .commentarea .RES-keyNav-activeElement.entry .noncollapsed {
+    .commentarea .RES-keyNav-activeElement.entry .noncollapsed,
+    .RES-keyNav-activeElement .md-container {
         background: transparent !important;
     }
 
