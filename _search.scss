@@ -1,0 +1,144 @@
+@import 'colors';
+@import 'images';
+@import 'base';
+
+.combined-search-page .searchpane {
+    margin: 0px;
+    padding: 0px;
+}
+
+.search-result-group {
+    max-width: none;
+    min-width: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+
+    .search-result-group-header {
+        border-bottom: 2px solid $page-background-color;
+        color: $listings-post-text-color;
+        text-transform: capitalize;
+    }
+}
+
+.base-body {
+    background-color: $listings-post-background-color;
+    border: none;
+    border-radius: 3px;
+    padding: 16px;
+    color: $listings-post-text-color;
+
+    a {
+        color: $page-link-color;
+        transition: color 0.3s;
+
+        &:hover,
+        &:active {
+            color: $page-link-color-hover;
+        }
+
+        &:visited {
+            color: $page-link-color-visited;
+        }
+    }
+
+    blockquote {
+        color: $greentext;
+        border: none;
+
+        p:before {
+            content: ">";
+            display: inline;
+        }
+    }
+
+    del {
+        color: $listings-post-text-color;
+    }
+
+    pre {
+        background-color: $listings-post-background-color;
+        padding: 16px;
+        border: none;
+
+        code {
+            margin: 0;
+        }
+    }
+}
+
+.search-result-subreddit {
+     .search-result-body {
+        @extend .base-body;
+    }
+}
+
+.search-result {
+    padding-left: 0px;
+    margin-bottom: 16px;
+    color: $listings-base-text-color;
+
+    .thumbnail,
+    &.has-thumbnail > .thumbnail {
+        margin: 0px 24px 0px 8px;
+
+        &.self {
+            @extend .base-thumbnail;
+            background-image: url($selfpost);
+        }
+
+        &.nsfw {
+            @extend .base-thumbnail;
+            background-image: url($nsfw);
+        }
+    }
+
+    .search-result-header a.search-title {
+        display: inline-block;
+        color: $link-title-color;
+        transition: text-shadow 0.3s, color 0.3s;
+
+        &:hover,
+        &:active {
+            color: $link-title-color-hover;
+            text-shadow: 0px 0px 10px $link-title-color;
+        }
+
+        &:visited {
+            color: $link-title-color-visited;
+        }
+
+        mark {
+            color: $link-title-color;    
+        }
+    }
+
+    .search-result-meta,
+    .search-result-footer {
+        margin-top: 8px;
+        color: $listings-base-text-color;
+
+        a {
+            color: $link-author-color;
+        }
+    }
+
+    .search-expando-button {
+        color: $link-title-color;
+    }
+}
+
+.search-expando {
+    &.collapsed:before {
+        background: linear-gradient(to bottom,rgba(6,6,6,0) 0%,#424242 100%);
+    }   
+
+    .md {
+        @extend .base-body;
+    }
+}
+
+.nextprev a, 
+.next-suggestions a {
+    background: transparent;
+    border: none;
+}
