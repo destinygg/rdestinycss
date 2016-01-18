@@ -364,3 +364,19 @@ ul.report-reasons,
     border: none;
     border-radius: 3px;
 }
+
+.action-form {
+    @extend .infobar;
+    padding: 16px;
+
+    .reason-prompt {
+        font-size: 16px;
+        color:  $link-title-color;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    ol {
+        margin-bottom: 8px;
+    }
+}
