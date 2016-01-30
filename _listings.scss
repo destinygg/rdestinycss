@@ -126,7 +126,7 @@ body > .content {
 
         &:hover,
         &:active {
-            color: $nsfw-link-title-color-hover;
+            color: $nsfw-link-title-color-hover !important;
             text-shadow: 0px 0px 10px $nsfw-link-title-color;
         }
 
@@ -154,12 +154,12 @@ body > .content {
 
         &:hover,
         &:active {
-            color: $link-title-color-hover;
+            color: $link-title-color-hover !important;
             text-shadow: 0px 0px 10px $link-title-color;
         }
 
         &:visited {
-            color: $link-title-color-visited;
+            color: $link-title-color-visited !important;
         }
     }
 
@@ -179,7 +179,7 @@ body > .content {
 
             &:hover,
             &:active {
-                color: $link-title-color-hover-sticky;
+                color: $link-title-color-hover-sticky !important;
                 text-shadow: 0px 0px 10px $link-title-color-sticky;
             }
         }
