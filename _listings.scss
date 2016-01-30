@@ -150,6 +150,7 @@ body > .content {
         display: inline-block;
         color: $link-title-color;
         transition: text-shadow 0.3s, color 0.3s;
+        vertical-align: middle;
 
         &:hover,
         &:active {

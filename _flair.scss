@@ -1,0 +1,36 @@
+@import 'colors';
+@import 'images';
+@import 'base';
+
+.linkflairlabel {
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    color: $link-flair-text-color;
+    background: $link-flair-background-color;
+    border-radius: 3px;
+    padding: 2px 4px;
+    vertical-align: middle;
+}
+
+.memer {
+    border: 1px solid;
+    color: #FFF;
+    border-radius: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 2px;
+}
+
+.flair-memer {
+    @extend .memer;
+    background: #9144AD;
+    border-color: #C86AEB;
+}
+
+.flair-senpai {
+    @extend .memer;
+    background: #9C0B0B;
+    border-color: #D91A1A;
+}
