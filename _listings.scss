@@ -148,7 +148,7 @@ body > .content {
 
     a.title {
         display: inline-block;
-        color: $link-title-color;
+        color: $link-title-color !important;
         transition: text-shadow 0.3s, color 0.3s;
         vertical-align: middle;
 

@@ -2,6 +2,35 @@
 @import 'images';
 @import 'base';
 
+.drop-choices {
+    border: none;
+    background-color: $page-background-color;
+    padding: 8px !important;
+
+    &.flairselector {
+        box-shadow: none;
+    }
+
+    &.flairselector.active,
+    &.active {
+        border: none;
+    }
+}
+
+.flairselector h2 {
+    background: $listings-background-color;
+    border-radius: 3px;
+    padding: 4px;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+    color: $flair-selector-title-text-color;
+}
+
+.flairselector form {
+    border-top: none;
+    margin-top: 8px;
+}
+
 .linkflairlabel {
     font-size: 12px;
     font-weight: bold;
