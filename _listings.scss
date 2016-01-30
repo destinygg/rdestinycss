@@ -121,7 +121,7 @@ body > .content {
     }
 
     &.over18 a.title {
-        color: $nsfw-link-title-color;
+        color: $nsfw-link-title-color !important;
         transition: text-shadow 0.3s, color 0.3s;
 
         &:hover,
@@ -175,7 +175,7 @@ body > .content {
 
         a.title {
             font-weight: normal;
-            color: $link-title-color-sticky;
+            color: $link-title-color-sticky !important;
 
             &:hover,
             &:active {
