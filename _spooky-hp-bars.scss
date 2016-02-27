@@ -1,0 +1,52 @@
+@import 'colors';
+@import 'base';
+
+$hp-bar-width: 50px;
+$hp-bar-background: #222;
+$hp-bar-fill: #94D66B;
+$hp-bar-bad-fill: #ff0000;
+$hp-bar-border-color: #666;
+
+a.author ~ .userattrs {
+    position: relative;
+    padding-left: 58px;
+
+    &:before {
+        content: "";
+        display: inline-block;
+        width: 50px;
+        height: 8px;
+        background: $hp-bar-background;
+        border: 1px solid $hp-bar-border-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        display: inline-block;
+        width: $hp-bar-width;
+        height: 8px;
+        background: $hp-bar-fill;
+    }
+}
+
+@for $i from 1 through 3 {
+    $frac: $i * 25;
+    $pct: $frac / 100;
+    .flair-hp#{$frac} ~ span.userattrs:after {
+        width: $pct * $hp-bar-width;
+        background: mix($hp-bar-fill, $hp-bar-bad-fill, $pct * 100)
+    }
+}
+
+.flair-hp0 ~ span.userattrs:after {
+    background: $hp-bar-background;
+    content: "RIP";
+    font-size: 8px;
+    text-align: center;
+}
