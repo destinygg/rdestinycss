@@ -60,7 +60,7 @@
         a {
             background-image: url($logo);
             display: inline-block;
-            height: 24px;
+            height: 59px;
             width: 189px;
             color: transparent;
             margin: 16px;
@@ -68,21 +68,11 @@
             margin-left: 32px;
         }
 
-        a:after {
-            content: "Professional Streamer";
-            color: $header-base-text-color;
-            display: block;
-            margin-top: 16px;
-            margin-bottom: 16px;
-            font-variant: normal;
-            font-size: 12px;
-            font-weight: normal;
-        }
-
         a:before {
             content: url($destiny-illus);
             position: absolute;
             top: 34px;
+            left: 70px;
         }
     }
 
