@@ -18,7 +18,7 @@ class DestinySidebarUpdater:
 [](http://www.destiny.gg/bigscreen?from=reddit#thumb)
 [LIVE!](http://www.destiny.gg/bigscreen?from=reddit#live)
 [with **$streamViewers** viewers.](http://www.destiny.gg/bigscreen#streamViewers)
-[Playing: **$streamGame**]($streamGameHomepage#gamePlaying)
+[Playing: **$streamGame**](http://www.destiny.gg/bigscreen?from=reddit#gamePlaying)
 
 """)
 
@@ -86,20 +86,20 @@ class DestinySidebarUpdater:
         # Grab the game's homepage (not 100% accurate, but good enough)
         # if needed
         if (self.previousGame != streamGame):
-            streamGameHomepage = self.getGameHomepage(streamGame)
-            self.configParser.set("PREVIOUS_DATA", "game_homepage",
-                                  streamGameHomepage)
+            # streamGameHomepage = self.getGameHomepage(streamGame)
+            # self.configParser.set("PREVIOUS_DATA", "game_homepage",
+            #                       streamGameHomepage)
             self.configParser.set("PREVIOUS_DATA", "game", streamGame)
-        else:
-            streamGameHomepage = self.previousGameHomepage
+        # else:
+        #     streamGameHomepage = self.previousGameHomepage
 
         # Save config
         self.saveConfig()
 
         return self.streamInformationTemplate.substitute(
             streamGame=streamGame,
-            streamViewers=str(streamViewers),
-            streamGameHomepage=streamGameHomepage)
+            streamViewers=str(streamViewers))
+        #     streamGameHomepage=streamGameHomepage)
 
     def updateSidebar(self):
         # print(self.template.substitute(
@@ -112,7 +112,8 @@ class DestinySidebarUpdater:
                 sentinel=self.sentinel,
                 currentSidebar=self.subredditDescription))
 
-    # TODO: This method should be overridden with proper Google API usage
+    # TODO: Figure out if its worth bringing this functionality back
+    # TODO: As of right now, the method below is fully deprecated
     def getGameHomepage(self, game):
         print("Grabbing homepage")
         if (game != self.previousGame):
@@ -124,7 +125,7 @@ class DestinySidebarUpdater:
             encoding = response.headers.get_content_charset()
             response = response.read().decode(encoding)
             responseJSON = json.loads(response)
-
+            
             if responseJSON["responseData"]["results"] == None:
                 return "/"
 
