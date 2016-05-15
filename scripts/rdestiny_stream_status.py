@@ -15,10 +15,10 @@ class DestinySidebarUpdater:
 
     streamInformationTemplate = Template("""-----
 
-[](http://www.destiny.gg/bigscreen?from=reddit#thumb)
-[LIVE!](http://www.destiny.gg/bigscreen?from=reddit#live)
-[with **$streamViewers** viewers.](http://www.destiny.gg/bigscreen#streamViewers)
-[Playing: **$streamGame**](http://www.destiny.gg/bigscreen?from=reddit#gamePlaying)
+[](https://www.destiny.gg/bigscreen?from=reddit#thumb)
+[LIVE!](https://www.destiny.gg/bigscreen?from=reddit#live)
+[with **$streamViewers** viewers.](https://www.destiny.gg/bigscreen#streamViewers)
+[Playing: **$streamGame**](https://www.destiny.gg/bigscreen?from=reddit#gamePlaying)
 
 """)
 
