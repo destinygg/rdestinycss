@@ -36,7 +36,7 @@ $text-top: $thumb-top + 22px;
 $text-left: $thumb-left + 186px;
 $line: 18px;
 
-.side a[href="http://www.destiny.gg/bigscreen?from=reddit#thumb"] {
+.side a[href="https://www.destiny.gg/bigscreen?from=reddit#thumb"] {
     position: absolute;
     top: $thumb-top;
     left: $thumb-left;
@@ -50,7 +50,7 @@ $line: 18px;
     border-radius: 3px;
 }
 
-.side a[href="http://www.destiny.gg/bigscreen?from=reddit#live"] {
+.side a[href="https://www.destiny.gg/bigscreen?from=reddit#live"] {
     position: absolute;
     top: $text-top;
     left: $text-left;
@@ -60,7 +60,7 @@ $line: 18px;
     color: #FF0000;
 }
 
-.side a[href="http://www.destiny.gg/bigscreen#streamViewers"] {
+.side a[href="https://www.destiny.gg/bigscreen#streamViewers"] {
     position: absolute;
     top: $text-top + $line;
     left: $text-left;
