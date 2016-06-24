@@ -57,13 +57,15 @@ class DestinySidebarUpdater:
 
     def streamInformation(self):
         # Request stream information from Twitch's REST API
-        response = urllib.request.urlopen(
-            "https://api.twitch.tv/kraken/streams/%s?client_id=%s"
-            % (self.twitchStream, self.twitchClientID))
+        request = urllib.request.Request(
+            url = "https://api.twitch.tv/kraken/streams/%s" % self.twitchStream,
+            headers = {"Client-ID": self.twitchClientID})
+        response = urllib.request.urlopen(request)
 
         encoding = response.headers.get_content_charset()
         response = response.read().decode(encoding)
         responseJSON = json.loads(response)
+        print(response)
 
         # Determine if the stream is online, if so gather information
         # and return the information blurb
