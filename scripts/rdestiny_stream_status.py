@@ -65,7 +65,6 @@ class DestinySidebarUpdater:
         encoding = response.headers.get_content_charset()
         response = response.read().decode(encoding)
         responseJSON = json.loads(response)
-        print(response)
 
         # Determine if the stream is online, if so gather information
         # and return the information blurb
