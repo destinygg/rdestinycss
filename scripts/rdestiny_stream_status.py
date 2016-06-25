@@ -73,6 +73,8 @@ class DestinySidebarUpdater:
         else:
             streamViewers = responseJSON["stream"]["viewers"]
             streamGame = responseJSON["stream"]["game"]
+            if streamGame == None:
+                streamGame = "Unknown"
 
         # Download the preview image to upload to the subreddit
         # responseJSON["stream"]["preview"]["small"]
