@@ -29,30 +29,28 @@ class DestinySidebarUpdater:
         self.readConfig()
 
         # Initialize reddit instance and login
-        self.reddit = praw.Reddit(user_agent=self.redditUserAgent)
-        self.reddit.set_oauth_app_info(client_id=self.oauth_client_id,
-                                       client_secret=self.oauth_client_secret,
-                                       redirect_uri=self.oauth_redirect_uri)
+        self.reddit = praw.Reddit(client_id=self.oauth_client_id,
+                                  client_secret=self.oauth_client_secret,
+                                  redirect_uri=self.oauth_redirect_uri,
+                                  refresh_token=self.oauth_refresh_token,
+                                  user_agent=self.redditUserAgent)
 
         # print(self.reddit.get_authorize_url('destinygg', 'modconfig', True))
         # self.oauth_access_info = self.reddit.get_access_information(code)
         # print(self.oauth_access_info['refresh_token'])
-
-        self.oauth_access_info = self.reddit.refresh_access_information(
-            self.oauth_refresh_token)
+        #self.oauth_access_info = self.reddit.refresh_access_information(
+        #    self.oauth_refresh_token)
 
         # Grab the current sidebar
-        self.subreddit = self.reddit.get_subreddit(self.redditSubreddit)
-        self.subredditSettings = self.subreddit.get_settings()
+        self.subreddit = self.reddit.subreddit('Destiny')
+        self.subredditSettings = self.subreddit.mod.settings()
         self.subredditDescription = self.subredditSettings["description"][
             (self.subredditSettings["description"]
                  .find(self.sentinel) + len(self.sentinel)):]
 
         # Grab the stylesheet
-        self.subredditStylesheet = self.subreddit.get_stylesheet()
-        self.subredditStylesheet = self.subredditStylesheet["stylesheet"]
-
         self.subredditDescription = html.unescape(self.subredditDescription)
+        self.subredditStylesheet = self.subreddit.stylesheet().stylesheet
         self.subredditStylesheet = html.unescape(self.subredditStylesheet)
 
     def streamInformation(self):
@@ -61,9 +59,7 @@ class DestinySidebarUpdater:
             url = "https://api.twitch.tv/kraken/streams/%s" % self.twitchStream,
             headers = {"Client-ID": self.twitchClientID})
         response = urllib.request.urlopen(request)
-
-        encoding = response.headers.get_content_charset()
-        response = response.read().decode(encoding)
+        response = response.read().decode('utf-8')
         responseJSON = json.loads(response)
 
         # Determine if the stream is online, if so gather information
@@ -84,7 +80,7 @@ class DestinySidebarUpdater:
         self.subreddit.upload_image(self.STREAM_THUMB_FILENAME, "streamThumb")
 
         # Force an update on the subreddit's image cache
-        self.subreddit.set_stylesheet(self.subredditStylesheet)
+        self.subreddit.stylesheet.update(self.subredditStylesheet)
 
         # Grab the game's homepage (not 100% accurate, but good enough)
         # if needed
@@ -109,11 +105,15 @@ class DestinySidebarUpdater:
         #     streamInformation=self.streamInformation(),
         #     sentinel=self.sentinel,
         #     currentSidebar=self.subredditDescription))
-        self.subreddit.update_settings(
+        self.subreddit.mod.update(
             description=self.template.substitute(
                 streamInformation=self.streamInformation(),
                 sentinel=self.sentinel,
-                currentSidebar=self.subredditDescription))
+                currentSidebar=self.subredditDescription),
+            # These exist due to bugs in PRAW4, remove when PRAW updates
+            show_thumbnails=self.subredditSettings['show_media'],
+            header_hover_text=self.subredditSettings['header_hover_text'],
+            exclude_modqueue_banned=True)
 
     # TODO: Figure out if its worth bringing this functionality back
     # TODO: As of right now, the method below is fully deprecated
