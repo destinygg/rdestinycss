@@ -77,7 +77,7 @@ class DestinySidebarUpdater:
         thumb_url = "http://static-cdn.jtvnw.net/previews-ttv/live_user_destiny-170x96.jpg"
         urllib.request.urlretrieve(thumb_url,
                                    self.STREAM_THUMB_FILENAME)
-        self.subreddit.upload_image(self.STREAM_THUMB_FILENAME, "streamThumb")
+        self.subreddit.stylesheet.upload("streamThumb", self.STREAM_THUMB_FILENAME)
 
         # Force an update on the subreddit's image cache
         self.subreddit.stylesheet.update(self.subredditStylesheet)
